@@ -1,5 +1,9 @@
 package com.cc.java;
 
+import com.cc.java.bees.*;
+import com.cc.java.birds.*;
+
+
 public class App {
     
     public static void main(String[] args) {
@@ -13,6 +17,7 @@ public class App {
         pollObj(queen);
         pollObj(worker);
         pollObj(drone);
+
         pollObj(bird);
 
         // HoneyBee ist abstrakt --> Fehler!
@@ -20,9 +25,15 @@ public class App {
        
     }
 
-    // 2. Iteration: Polymorphie
+    // Overloading
     private static void pollObj(HoneyBee obj){
         output(obj.doYourJob());
+        output(obj.fly());
+        output("-------------------");
+    }
+
+    private static void pollObj(Bird obj){
+        output(obj.hasFeathers());
         output(obj.fly());
         output("-------------------");
     }
